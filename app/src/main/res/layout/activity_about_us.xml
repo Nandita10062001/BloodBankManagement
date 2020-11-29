@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/toolbar1"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="4dp"/>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:src="@drawable/image"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_margin="45dp"/>
+
+    <TextView
+        android:layout_margin="10dp"
+        android:gravity="left"
+        android:padding="20dp"
+        android:textSize="18sp"
+        android:background="@drawable/border"
+        android:id="@+id/txtv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AboutUs"
+        android:textColor="#000000"
+        android:linksClickable="true" />
+
+
+
+</LinearLayout>

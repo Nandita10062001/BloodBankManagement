@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="txt4" type="id" />
+    <item name="txt3" type="id" />
+    <item name="txt2" type="id" />
+    <item name="Image" type="id" />
+    <item name="txt5" type="id" />
+</resources>

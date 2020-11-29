@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstScreen"
+    android:background="@color/colorPrimary"
+    android:layout_gravity="center"
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="serif"
+        android:gravity="center_horizontal"
+        android:paddingTop="160dp"
+        android:text="@string/donate_blood"
+        android:textColor="@color/colorAccent"
+        android:textSize="38sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="250dp"
+        android:layout_height="280dp"
+        android:src="@drawable/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="160dp"
+        android:gravity="bottom"
+        android:text="@string/save_life"
+        android:textColor="@color/colorAccent"
+        android:textSize="38sp"
+        android:textStyle="italic"
+        android:layout_marginStart="100sp"
+         />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

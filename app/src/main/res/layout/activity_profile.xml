@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:padding="8dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/my_profile"
+        android:textColor="#000000"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="133dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/account" />
+
+
+        <TextView
+            android:id="@+id/enter_fullName"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000"
+            android:hint="@string/fullname">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/enter_email"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000"
+            android:hint="@string/email_address">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/inputBloodGroup"
+            android:layout_width="237dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"
+            android:hint= "BloodGroup"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/inputMobile"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"
+            android:hint="Contact"/>
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/inputCity"
+            android:layout_width="350dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:paddingTop="20dp"
+            android:textColor="#000000"
+            android:hint="City"/>
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="15dp"
+        android:text="Update Profile"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:onClick="Update"/>
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="122dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryDark"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:onClick="Back"
+        android:textColor="@color/colorAccent" />
+</LinearLayout>
