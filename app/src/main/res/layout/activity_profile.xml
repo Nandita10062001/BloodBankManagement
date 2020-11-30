@@ -86,19 +86,7 @@
             android:paddingTop="20dp"
             android:textColor="#000000"
             android:hint="City"/>
-    <Button
-        android:id="@+id/btn_update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
-        android:background="@color/colorPrimaryDark"
-        android:padding="15dp"
-        android:text="Update Profile"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
-        android:onClick="Update"/>
+
 
     <Button
         android:id="@+id/btn_back"
@@ -106,6 +94,7 @@
         android:layout_height="45dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="40dp"
         android:text="Back"
         android:textAllCaps="false"
         android:onClick="Back"

@@ -41,5 +41,6 @@
     <string name="city">City</string>
     <string name="my_profile">My Profile</string>
     <string name="fullname">FullName</string>
+    <string name="reset">Reset</string>
 
 </resources>

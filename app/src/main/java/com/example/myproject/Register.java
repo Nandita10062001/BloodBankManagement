@@ -99,7 +99,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         }
         if(city.isEmpty())
         {
-            City.setError("Address is Required!");
+            City.setError("Please mention your city");
             City.requestFocus();
             return;
         }

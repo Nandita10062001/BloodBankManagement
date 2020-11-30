@@ -58,6 +58,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/reset"
             android:text="@string/forgot_password"
             android:drawableStart="@drawable/ic_shapeforpassword"
             android:drawablePadding="5dp"

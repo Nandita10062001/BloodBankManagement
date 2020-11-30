@@ -28,66 +28,55 @@ import javax.annotation.Nullable;
 
 public class Profile extends AppCompatActivity {
     private TextView profileName, profileEmail, profileBg, profilePhoneNo, profileCity;
-    private FirebaseAuth fAuth;
-    private Button update, back;
-    private String userId;
+    private Button back;
     private FirebaseUser user;
-    private FirebaseDatabase firebaseDatabase;
     private DatabaseReference reference;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            if (bundle.getString("profile") != null) {
-                Toast.makeText(getApplicationContext(), "data" + bundle.getString("profile")
-                        , Toast.LENGTH_SHORT).show();
-            }
-        }
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userId = user.getUid();
         profileName = findViewById(R.id.enter_fullName);
         profileEmail = findViewById(R.id.enter_email);
         profileBg = findViewById(R.id.inputBloodGroup);
         profilePhoneNo = findViewById(R.id.inputMobile);
         profileCity = findViewById(R.id.inputCity);
-        fAuth = FirebaseAuth.getInstance();
-        update = findViewById(R.id.btn_update);
         back = findViewById(R.id.btn_back);
-        userId = user.getUid();
-        user = fAuth.getInstance().getCurrentUser();
-        reference = firebaseDatabase.getReference(fAuth.getUid());
-        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
-                profileName.setText(user.getFullName());
-                profileEmail.setText(user.getEmail());
-                profileBg.setText(user.getBloodGroup());
-                profilePhoneNo.setText(user.getPhone());
-                profileCity.setText(user.getCity());
+                User userProfile = snapshot.getValue(User.class);
+
+                if(userProfile != null)
+                {
+                    String fullName = userProfile.FullName;
+                    String Email = userProfile.email;
+                    String BloodGroup = userProfile.bloodGroup;
+                    String Mobile = userProfile.Phone;
+                    String City = userProfile.address;
+
+                    profileEmail.setText(Email);
+                    profileBg.setText(BloodGroup);
+                    profileCity.setText(City);
+                    profilePhoneNo.setText(Mobile);
+                    profileName.setText(fullName);
+
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(Profile.this,error.getCode(),Toast.LENGTH_SHORT).show();
+             Toast.makeText(Profile.this,"Something went wrong", Toast.LENGTH_LONG).show();
             }
         });
 
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(view.getContext(), EditProfile.class);
-                //i.putExtra("fullName",profileName .getText().toString());
-                //i.putExtra("Email", profileEmail.getText().toString());
-                //i.putExtra("BloodGroup", profileBg.getText().toString());
-                //i.putExtra("Phone",profilePhoneNo.getText().toString());
-                //i.putExtra("City", profileCity.getText().toString());
-                startActivity(i);
-            }
-        });
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

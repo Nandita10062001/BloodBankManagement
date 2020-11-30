@@ -12,9 +12,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     FirebaseAuth mAuth;
+    FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -33,7 +36,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        floatingActionButton = findViewById(R.id.floating_action_button);
         mAuth = FirebaseAuth.getInstance();
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -48,7 +51,15 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_Home);}
 
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this,Post.class));
+            }
+        });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
     String TAG ;
     EditText mEmail,mPassword;
     Button mLogin;
-    TextView mRegister;
+    TextView mRegister,forgotPassword;
     FirebaseAuth fAuth;
 
     @Override
@@ -35,6 +35,14 @@ public class Login extends AppCompatActivity {
         mPassword = findViewById(R.id.Password);
         mLogin = findViewById(R.id.Login);
         mRegister = (TextView) findViewById(R.id.Register);
+        forgotPassword = findViewById(R.id.reset);
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ForgotPassword.class));
+            }
+        });
         fAuth = FirebaseAuth.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null)
