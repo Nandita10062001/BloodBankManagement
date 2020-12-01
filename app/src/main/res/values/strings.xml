@@ -1,5 +1,5 @@
 <resources>
-    <string name="MyProject">MyProject</string>
+    <string name="MyProject">Blood Bank</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -8,7 +8,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="AboutUs">
-     This is a Blood Bank Management Application that keeps track of patients who require blood urgently and also helps in searching for a donor.
+     This is a Blood Bank Management Application that keeps track of patients who require blood urgently and also helps in searching for a donor. \nCreated by Nandita Nandakumar and Pournami Pottekat
     </string>
     <string name="why_donate_blood">Why Donate Blood?</string>
     <string name="donate">Donating Blood is a vital way to help save lives..</string>
@@ -29,14 +29,14 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="enter_your_blood_group">Enter your Blood Group</string>
     <string name="registerBtn">Register</string>
-    <string name="already_have_account">Already have an Account? Login</string>
+    <string name="already_have_account">Already have an account? Login</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="login">Login</string>
     <string name="or">or</string>
-    <string name="don_t_have_an_account_create_one">Don\'t have an account?Create one</string>
+    <string name="don_t_have_an_account_create_one">Don\'t have an account? Create one</string>
     <string name="donate_blood_save_life">Donate Blood, Save Life</string>
     <string name="city">City</string>
     <string name="my_profile">My Profile</string>

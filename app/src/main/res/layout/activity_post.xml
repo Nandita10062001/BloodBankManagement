@@ -7,13 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".Post">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".PostActivity"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="85dp">
+    <ImageView
+        android:layout_width="184dp"
+        android:layout_height="188dp"
+        android:src="@drawable/ic_bloodd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="303dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".PostActivity">>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -38,6 +52,7 @@
                     android:id="@+id/getName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Full Name"
                     android:inputType="text"
                     android:padding="5dp" />
             </LinearLayout>
@@ -46,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -68,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -91,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -120,8 +135,8 @@
                 android:text="Post"
                 android:textColor="#fff" />
 
-        </LinearLayout>
 
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

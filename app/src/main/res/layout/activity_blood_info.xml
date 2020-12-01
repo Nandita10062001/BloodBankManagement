@@ -7,93 +7,137 @@
     android:layout_height="match_parent"
     tools:context=".BloodInfo">
 
-
-    <RelativeLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
-        android:background="#FFFFFF"
-        android:layout_height="match_parent">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
-            android:id="@+id/toolbar2"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        android:textAlignment="center"
 
-            <TextView
-                android:id="@+id/txt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="70dp"
-                android:fontFamily="@font/amarante"
-                android:text="@string/why_donate_blood"
-                android:textColor="#000"
-                android:textSize="50sp"
-                android:textStyle="bold" />
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/why_donate_blood"
+        android:textColor="#000"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.385" />
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="150dp"
-                android:src="@drawable/image"
-                android:layout_marginStart="300dp"
-                android:layout_marginTop="80dp"
-                android:id="@+id/Image"
-                android:contentDescription="@string/blood_information"/>
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/blood_information"
+        android:src="@drawable/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/Image"
-                android:layout_marginStart="15sp"
-                android:text="@string/donate"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:id="@+id/txt2"/>
-            <TextView
-                android:id="@+id/txt3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txt2"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:text="@string/Point1"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/txt4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txt3"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:text="@string/Point2"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/txt5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txt4"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:text="@string/Point3"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Point4"
-                android:layout_below="@id/txt5"
-                android:layout_marginTop="65dp"
-                android:textSize="20sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:layout_marginStart="85dp"/>
-        </RelativeLayout>
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_below="@id/Image"
+        android:text="@string/donate"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_below="@id/txt2"
+        android:text="@string/Point1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.638" />
+
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_below="@id/txt3"
+        android:text="@string/Point2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
+
+    <TextView
+        android:id="@+id/txt5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_below="@id/txt4"
+        android:text="@string/Point3"
+        android:textSize="16sp"
+
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt5"
+        android:text="@string/Point4"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
