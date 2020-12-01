@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".Post">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="184dp"
@@ -27,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".PostActivity">>
+        tools:context=".PostActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,10 +98,9 @@
                     android:text="Blood Group:" />
 
                 <EditText
-                    android:id="@+id/getLocation"
+                    android:id="@+id/getBG"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="A+"
                     android:inputType="text"
                     android:padding="5dp" />
 
@@ -116,10 +120,9 @@
                     android:text="City" />
 
                 <EditText
-                    android:id="@+id/getDivision"
+                    android:id="@+id/getPlace"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Mumbai"
                     android:inputType="text"
                     android:padding="5dp" />
             </LinearLayout>
@@ -140,3 +143,4 @@
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
