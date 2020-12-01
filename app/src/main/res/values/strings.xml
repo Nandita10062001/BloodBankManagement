@@ -43,4 +43,28 @@
     <string name="fullname">FullName</string>
     <string name="reset">Reset</string>
 
+    <!--    For Search Donor Fragment-->
+    <array name="Blood_Group">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </array>
+
+    <string-array name="division_list">
+        <item>Mumbai</item>
+        <item>Pune</item>
+        <item>Delhi</item>
+        <item>Kolkata</item>
+        <item>Thrissur</item>
+        <item>Rajasthan</item>
+        <item>Nagur</item>
+        <item>Nashik</item>
+
+    </string-array>
+
 </resources>
