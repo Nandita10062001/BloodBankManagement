@@ -15,7 +15,7 @@
     <string name="Point1">1.Blood Donation is a community responsibility. While you are reading this, there might be a patient in search of blood.</string>
     <string name="Point2">2.About one in seven people entering the hospital needs blood.</string>
     <string name="Point3">3. When you donate blood, it puts a smile on someone else\'s face.It is a gift of life.</string>
-    <string name="Point4">BE A HERO.DONATE BLOOD</string>
+    <string name="Point4">BE A HERO. DONATE BLOOD.</string>
     <string name="blood_information">Blood Information</string>
     <string name="save_life">Save Life....</string>
     <string name="home_page">Home Page</string>
@@ -55,11 +55,11 @@
         <item>O-</item>
     </array>
 
-    <string-array name="division_list">
+    <string-array name="city_list">
         <item>Mumbai</item>
         <item>Pune</item>
         <item>Delhi</item>
-        <item>Kolkata</item>
+        <item>Thane</item>
         <item>Thrissur</item>
         <item>Rajasthan</item>
         <item>Nagur</item>

@@ -46,14 +46,14 @@ public BloodRequestAdapter(List<CustomUserData> postLists)
     @Override
     public void onBindViewHolder(PostHolder postHolder, int i) {
 
-        if(i%2==0)
-        {
-            postHolder.itemView.setBackgroundColor(Color.parseColor("#C13F31"));
-        }
-        else
-        {
-            postHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        }
+//        if(i%2==0)
+//        {
+//            postHolder.itemView.setBackgroundColor(Color.parseColor("#C13F31"));
+//        }
+//        else
+//        {
+//            postHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+//        }
 
         CustomUserData customUserData = postLists.get(i);
         postHolder.FullName.setText("Posted by: "+customUserData.getFullName());

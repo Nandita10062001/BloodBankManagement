@@ -17,15 +17,15 @@
    >
 
 
-    <ImageView
-        android:layout_width="209dp"
-        android:layout_height="255dp"
-        android:src="@drawable/ic_regis"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        <ImageView
+            android:layout_width="178dp"
+            android:layout_height="211dp"
+            android:src="@drawable/ic_verification"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55" />
 
     <TextView
         android:id="@+id/TextView2"
@@ -144,7 +144,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="608dp"
-        android:background="@drawable/bg_text_button"
+        android:background="@drawable/buttonbg"
         android:padding="15dp"
         android:shadowColor="@android:color/transparent"
         android:text="@string/registerBtn"

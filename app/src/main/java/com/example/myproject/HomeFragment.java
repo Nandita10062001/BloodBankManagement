@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+//import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,7 +37,7 @@ public class HomeFragment extends Fragment {
   private BloodRequestAdapter requestAdapter;
   private List<CustomUserData> postLists;
   private ProgressDialog pd;
-
+  SearchView searchView;
   public HomeFragment()
   {
 
@@ -45,17 +47,20 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.fragment_home, container, false);
+
         Posts =(RecyclerView)view.findViewById(R.id.recyclePosts);
         Posts.setLayoutManager(new LinearLayoutManager(getContext()));
+        searchView = (SearchView)view.findViewById(R.id.searchView);
         ref = FirebaseDatabase.getInstance().getReference();
         postLists = new ArrayList<>();
+
         pd = new ProgressDialog(getActivity());
         pd.setMessage("Loading...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 
         auth = FirebaseAuth.getInstance();
-        getActivity().setTitle("Blood Point");
+        getActivity().setTitle("Blood Bank");
 
         requestAdapter = new BloodRequestAdapter(postLists);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -68,36 +73,61 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    private void AddPosts()
-    {
+    private void AddPosts() {
         Query allPosts = ref.child("posts");
         allPosts.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists())
-                {
-                    for(DataSnapshot single: snapshot.getChildren())
-                    {
-                        CustomUserData customUserData=single.getValue(CustomUserData.class);
+                if (snapshot.exists()) {
+                    for (DataSnapshot single : snapshot.getChildren()) {
+                        CustomUserData customUserData = single.getValue(CustomUserData.class);
                         postLists.add(customUserData);
                         requestAdapter.notifyDataSetChanged();
                     }
 
-                }
-              else
-                {
-                    Toast.makeText(getActivity(),"Database is empty now!",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getActivity(), "Database is empty now!", Toast.LENGTH_LONG).show();
                     pd.dismiss();
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error)
-            {
-                Log.d("Users",error.getMessage());
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("Users", error.getMessage());
             }
         });
+        if(searchView != null)
+        {
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String s) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String s) {
+                    search(s);
+                    return true;
+                }
+            });
+        }
     }
+
+    private void search(String str)
+    {
+        ArrayList<CustomUserData> myList = new ArrayList<>();
+        for(CustomUserData object : postLists)
+        {
+            if(object.getBloodGroup().toLowerCase().contains(str.toLowerCase()))
+            {
+                myList.add(object);
+            }
+        }
+
+        requestAdapter = new BloodRequestAdapter(myList);
+        Posts.setAdapter(requestAdapter);
+    }
+
 
     @Override
     public void onResume() {

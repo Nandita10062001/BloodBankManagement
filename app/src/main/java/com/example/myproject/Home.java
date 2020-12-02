@@ -103,8 +103,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         else if(Id == R.id.nav_SearchDonor)
         {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new SearchDonor()).commit();
+            startActivity(new Intent(getApplicationContext(), SearchDonor.class));
+            finish();
+            overridePendingTransition(0, 0);
         }
 
         else if(Id == R.id.nav_Logout)

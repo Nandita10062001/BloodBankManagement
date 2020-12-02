@@ -16,7 +16,8 @@
         android:label="@string/MyProject"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Post"></activity>
+        <activity android:name=".SearchDonor"></activity>
+        <activity android:name=".Post" />
         <activity android:name=".ForgotPassword" />
         <activity
             android:name=".BloodInfo"
